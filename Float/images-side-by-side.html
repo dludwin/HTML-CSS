@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;    /* it will not break when we add padding */
+}
+
+.img-container {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.clearfix::after {   /* Insert some text after the content of each <p> element: */
+  content: "";
+  clear: both;       /* Do not allow floating elements on the left or the right side of a specified <p> element: */
+  display: table;   /*  Let the element behave like a <table> element */
+}
+</style>
+</head>
+<body>
+
+<h2>The box-sizing property allows us to include the padding and border in the box's total width (and height), making sure that the padding stays inside of the box and that it does not break.</h2>
+<p>Float images side by side:</p>
+
+<div class="clearfix">
+  <div class="img-container">
+  <img src="../images/w3schools_logo.gif" alt="Italy" style="width:100%">
+  </div>
+  <div class="img-container">
+  <img src="../images/w3schools_logo.gif" alt="Forest" style="width:100%">
+  </div>
+  <div class="img-container">
+  <img src="../images/w3schools_logo.gif" alt="Mountains" style="width:100%">
+  </div>
+</div>
+
+<p>Note that we also use the clearfix hack to take care of the layout flow, and that we add the box-sizing property to make sure that the image container doesn't break due to extra padding. Try to remove this code to see the effect.</p>
+
+</body>
+</html>
